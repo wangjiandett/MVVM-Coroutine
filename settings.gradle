@@ -1,0 +1,3 @@
+include ':dettmvvm'
+include ':app'
+rootProject.name = "MVVM-Coroutines"
