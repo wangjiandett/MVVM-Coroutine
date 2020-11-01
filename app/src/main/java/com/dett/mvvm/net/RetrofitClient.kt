@@ -11,6 +11,12 @@ import java.io.UnsupportedEncodingException
 import java.net.URLDecoder
 import java.util.concurrent.TimeUnit
 
+/**
+ * RetrofitClient
+ *
+ * @author wangjian
+ * Created on 2020/10/29 9:22
+ */
 class RetrofitClient {
 
     companion object {

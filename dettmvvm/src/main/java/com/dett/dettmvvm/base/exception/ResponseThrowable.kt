@@ -3,6 +3,12 @@ package com.dett.dettmvvm.base.exception
 import com.dett.dettmvvm.base.IBaseResponse
 import com.dett.dettmvvm.utils.Status
 
+/**
+ * 自定义异常
+ *
+ * @author wangjian
+ * Created on 2020/11/1 14:50
+ */
 class ResponseThrowable : Exception {
     var code: Int
     var errMsg: String

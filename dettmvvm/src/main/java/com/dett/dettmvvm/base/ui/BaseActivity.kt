@@ -1,9 +1,7 @@
 package com.dett.dettmvvm.base.ui
 
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.dett.dettmvvm.base.BaseRepository
 import com.dett.dettmvvm.base.BaseViewModel
@@ -41,15 +39,6 @@ abstract class BaseActivity<VM : BaseViewModel<out BaseRepository>>: AppCompatAc
             mViewModel = ViewModelProvider(this,
                 ViewModelProvider.NewInstanceFactory()
             ).get(tClass) as VM
-
-            dealError()
         }
     }
-
-    protected fun dealError(){
-        mViewModel.mLoadState.observe(this, Observer {
-            Toast.makeText(this, it.msg, Toast.LENGTH_LONG).show()
-        })
-    }
-
 }

@@ -2,6 +2,7 @@ package com.dett.mvvm
 
 import androidx.lifecycle.MutableLiveData
 import com.dett.dettmvvm.base.Message
+import com.dett.mvvm.net.BaseResponse
 
 /**
  * Describe
@@ -11,19 +12,30 @@ import com.dett.dettmvvm.base.Message
  */
 class DemoModel : AppModel<DemoRepository>() {
 
-    val banners: MutableLiveData<List<BannerBean>> = MutableLiveData()
+    val banners: MutableLiveData<Message<List<BannerBean>>> = MutableLiveData()
 
-    val banners2: MutableLiveData<Message<List<BannerBean>>> = MutableLiveData()
-
-    fun getBanner(): MutableLiveData<List<BannerBean>> {
-        sendRequest {
-            banners.value = mRepository.getBanners2()
-        }
+    /**
+     * 返回过滤掉BaseResponse之后的data数据
+     */
+    fun getBanner(): MutableLiveData<Message<List<BannerBean>>> {
+        sendBaseResponseRequest({mRepository.getBanners2()}, {
+            banners.value = it
+        })
         return banners
     }
 
+
+
+
+    val banners2: MutableLiveData<Message<BaseResponse<List<BannerBean>>?>> = MutableLiveData()
+
+    /**
+     * 返回没有经过过滤的响应数据
+     */
     fun getBanner2() {
-        getBaseResponse({ mRepository.getBanners() }, banners2)
+        sendRequest({mRepository.getBanners()}, {
+            banners2.value = it
+        })
     }
 
 }

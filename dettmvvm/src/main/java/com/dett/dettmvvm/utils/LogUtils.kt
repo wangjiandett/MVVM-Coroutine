@@ -11,6 +11,7 @@ import java.util.*
 object LogUtils {
     private const val TAG = "LogUtils"
     private val mLogLocale = Locale.CHINA
+
     val isLoggable: Boolean
         get() = true
 
@@ -18,13 +19,13 @@ object LogUtils {
         d(TAG, GsonHelper.toJson(msg))
     }
 
-    private fun getLog(msg: String): String {
-        return fileLineMethod + msg
-    }
-
     fun d(tag: String?, msg: String) {
         val log = getLog(msg)
-        Log.d(tag, log)
+        if (isLoggable) Log.d(tag, log)
+    }
+
+    private fun getLog(msg: String): String {
+        return fileLineMethod + msg
     }
 
     private val fileLineMethod: String

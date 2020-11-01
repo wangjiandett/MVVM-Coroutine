@@ -2,13 +2,16 @@ package com.dett.dettmvvm.utils
 
 import android.text.TextUtils
 import com.google.gson.GsonBuilder
-import org.json.JSONArray
-import org.json.JSONException
-import org.json.JSONObject
 import java.lang.reflect.ParameterizedType
 import java.lang.reflect.Type
 import java.util.*
 
+/**
+ * Json工具类
+ *
+ * @author wangjian
+ * Created on 2020/10/28 14:36
+ */
 object GsonHelper {
 
     //定义并配置gson
@@ -83,30 +86,7 @@ object GsonHelper {
                 jsonStr,
                 PType(clz)
             )
-        if (map == null) map = HashMap()
         return map
-    }
-
-    @JvmOverloads
-    fun formatJson(json: String, indentSpaces: Int = 4): String {
-        try {
-            var i = 0
-            val len = json.length
-            while (i < len) {
-                val c = json[i]
-                if (c == '{') {
-                    return JSONObject(json).toString(indentSpaces)
-                } else if (c == '[') {
-                    return JSONArray(json).toString(indentSpaces)
-                } else if (!Character.isWhitespace(c)) {
-                    return json
-                }
-                i++
-            }
-        } catch (e: JSONException) {
-            e.printStackTrace()
-        }
-        return json
     }
 
     private class PType constructor(private val type: Type) :

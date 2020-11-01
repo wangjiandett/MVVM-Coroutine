@@ -13,31 +13,21 @@
         android:id="@+id/tv_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:text="发送请求1"
         android:onClick="onClick"/>
 
     <Button
         android:id="@+id/tv_text1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:text="发送请求2"
         android:onClick="onClick"/>
-
-    <Button
-        android:id="@+id/tv_text2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        android:onClick="onClick"/>
-
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"/>
-
-
 
 
 </LinearLayout>

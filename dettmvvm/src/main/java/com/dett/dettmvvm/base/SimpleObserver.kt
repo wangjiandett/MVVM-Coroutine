@@ -4,7 +4,7 @@ import androidx.lifecycle.Observer
 import com.dett.dettmvvm.utils.StatusUtils
 
 /**
- * Describe
+ * MutableLiveData回调函数，处理请求成功，失败，完成回调
  *
  * @author wangjian
  * Created on 2020/10/29 9:04
@@ -20,7 +20,7 @@ interface SimpleObserver<T> : Observer<Message<T>> {
                 onFail(msg.code, msg.msg)
             }
             StatusUtils.FINISH.code -> {
-                // finish
+                onFinish()
             }
         }
     }
@@ -28,6 +28,8 @@ interface SimpleObserver<T> : Observer<Message<T>> {
     fun onSuccess(value: T?)
 
     fun onFail(code: Int, msg: String?)
+
+    fun onFinish(){}
 
 }
 

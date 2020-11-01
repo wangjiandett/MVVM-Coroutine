@@ -1,7 +1,7 @@
 package com.dett.mvvm.net
 
 /**
- * Describe
+ * api 请求接口类
  *
  * @author wangjian
  * Created on 2020/10/24 15:32
@@ -13,17 +13,5 @@ object ApiService {
     suspend fun getBanners() = mInterfaces.getBanners()
 
     suspend fun getBanners2() = mInterfaces.getBanners2()
-
-
-
-
-
-
-
-
-
-
-
-
 
 }

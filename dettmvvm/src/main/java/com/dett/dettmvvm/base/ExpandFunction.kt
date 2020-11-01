@@ -4,7 +4,7 @@ import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.MutableLiveData
 
 /**
- * Describe
+ * 拓展MutableLiveData的observe函数，自定义数据解析方式
  *
  * @author wangjian
  * Created on 2020/10/29 10:47
@@ -24,11 +24,4 @@ fun <T> MutableLiveData<Message<T>>.observe(
             onFail(code, msg)
         }
     })
-}
-
-fun <T> MutableLiveData<Message<T>>.observe(
-    owner: LifecycleOwner,
-    simpleObserver: SimpleObserver<T>
-) {
-    this.observe(owner, simpleObserver)
 }

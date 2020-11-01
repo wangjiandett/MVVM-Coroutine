@@ -2,7 +2,12 @@ package com.dett.mvvm.net
 
 import com.dett.dettmvvm.base.IBaseResponse
 
-
+/**
+ * BaseResponse 需要继承IBaseResponse
+ *
+ * @author wangjian
+ * Created on 2020/10/29 9:22
+ */
 open class BaseResponse<T>(
     private val errorMsg: String,
     private val errorCode: Int,
@@ -19,5 +24,5 @@ open class BaseResponse<T>(
 
     override fun data() = data
 
-    override fun isSuccess() = errorCode == Constant.SUCCESS_CODE // 定义请求成功响应码
+    override fun isSuccess() = errorCode == Constant.SUCCESS_CODE // 自定义请求成功响应码
 }

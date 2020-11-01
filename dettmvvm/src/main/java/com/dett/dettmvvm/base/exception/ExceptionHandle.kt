@@ -9,13 +9,22 @@ import retrofit2.HttpException
 import java.net.ConnectException
 import java.net.UnknownHostException
 
+/**
+ * 统一异常处理
+ *
+ * @author wangjian
+ * Created on 2020/11/1 14:50
+ */
 object ExceptionHandle {
 
     fun handleException(throwable: Throwable): ResponseThrowable {
         val ex: ResponseThrowable
+        // 自定义异常
         if (throwable is ResponseThrowable) {
             ex = throwable
-        } else if (throwable is HttpException) {
+        }
+        // 其他各种异常
+        else if (throwable is HttpException) {
             ex = ResponseThrowable(
                 StatusUtils.HTTP_ERROR,
                 throwable
