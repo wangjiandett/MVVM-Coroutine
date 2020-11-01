@@ -1,4 +1,4 @@
-package com.dett.mvvm
+package com.dett.mvvm.demo.view
 
 import android.view.View
 import androidx.lifecycle.Observer
@@ -6,8 +6,9 @@ import com.dett.dettmvvm.base.SimpleObserver
 import com.dett.dettmvvm.base.observe
 import com.dett.dettmvvm.utils.GsonHelper
 import com.dett.dettmvvm.utils.LogUtils
-import com.dett.mvvm.demo.BannerBean
-import com.dett.mvvm.demo.DemoModel
+import com.dett.mvvm.R
+import com.dett.mvvm.demo.bean.BannerBean
+import com.dett.mvvm.demo.viewmodel.DemoModel
 import com.dett.mvvm.ui.BaseViewModelActivity
 import kotlinx.android.synthetic.main.activity_main.*
 

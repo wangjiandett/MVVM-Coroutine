@@ -1,4 +1,4 @@
-package com.dett.mvvm.demo
+package com.dett.mvvm.demo.bean
 
 
 /**

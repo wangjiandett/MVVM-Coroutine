@@ -1,7 +1,9 @@
-package com.dett.mvvm.demo
+package com.dett.mvvm.demo.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import com.dett.dettmvvm.base.Message
+import com.dett.mvvm.demo.bean.BannerBean
+import com.dett.mvvm.demo.model.DemoRepository
 import com.dett.mvvm.net.BaseResponse
 
 /**
