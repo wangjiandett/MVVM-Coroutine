@@ -1,4 +1,4 @@
-package com.dett.mvvm
+package com.dett.mvvm.demo
 
 import com.dett.dettmvvm.base.BaseRepository
 import com.dett.dettmvvm.base.BaseViewModel

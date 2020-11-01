@@ -1,6 +1,6 @@
 package com.dett.mvvm.net
 
-import com.dett.mvvm.BannerBean
+import com.dett.mvvm.demo.BannerBean
 import retrofit2.http.GET
 
 /**

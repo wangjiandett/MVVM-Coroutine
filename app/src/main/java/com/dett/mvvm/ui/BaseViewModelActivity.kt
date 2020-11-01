@@ -1,37 +1,29 @@
-package com.dett.dettmvvm.base.ui
+package com.dett.mvvm.ui
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import androidx.fragment.app.Fragment
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.dett.dettmvvm.base.BaseRepository
 import com.dett.dettmvvm.base.BaseViewModel
 import java.lang.reflect.ParameterizedType
 
 /**
- * Describe
+ * 简单封装获取BaseViewModel实例
  *
  * @author wangjian
  * Created on 2020/10/28 14:36
  */
-abstract class BaseFragment<VM : BaseViewModel<out BaseRepository>>: Fragment() {
+abstract class BaseViewModelActivity<VM : BaseViewModel<out BaseRepository>>: AppCompatActivity() {
 
-    lateinit var mView: View
     protected lateinit var mViewModel: VM
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        super.onCreateView(inflater, container, savedInstanceState)
-        mView = inflater.inflate(getLayoutId(), null)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(getLayoutId())
+
         createViewModel()
         initView()
         initData()
-        return mView
     }
 
     abstract fun getLayoutId(): Int
@@ -49,5 +41,4 @@ abstract class BaseFragment<VM : BaseViewModel<out BaseRepository>>: Fragment() 
             ).get(tClass) as VM
         }
     }
-
 }

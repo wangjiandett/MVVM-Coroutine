@@ -1,6 +1,7 @@
-package com.dett.mvvm
+package com.dett.mvvm.demo
 
 import com.dett.dettmvvm.base.BaseRepository
+import com.dett.mvvm.demo.BannerBean
 import com.dett.mvvm.net.ApiService
 import com.dett.mvvm.net.BaseResponse
 

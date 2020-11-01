@@ -4,12 +4,14 @@ import android.view.View
 import androidx.lifecycle.Observer
 import com.dett.dettmvvm.base.SimpleObserver
 import com.dett.dettmvvm.base.observe
-import com.dett.dettmvvm.base.ui.BaseActivity
 import com.dett.dettmvvm.utils.GsonHelper
 import com.dett.dettmvvm.utils.LogUtils
+import com.dett.mvvm.demo.BannerBean
+import com.dett.mvvm.demo.DemoModel
+import com.dett.mvvm.ui.BaseViewModelActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : BaseActivity<DemoModel>() {
+class MainViewModelActivity : BaseViewModelActivity<DemoModel>() {
 
     override fun getLayoutId(): Int {
         return R.layout.activity_main

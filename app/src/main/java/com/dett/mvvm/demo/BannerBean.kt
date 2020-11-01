@@ -1,4 +1,4 @@
-package com.dett.mvvm
+package com.dett.mvvm.demo
 
 
 /**

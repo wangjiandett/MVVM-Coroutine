@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:gravity="center_horizontal"
     android:padding="20dp"
-    tools:context=".MainActivity">
+    tools:context=".MainViewModelActivity">
 
     <Button
         android:id="@+id/tv_text"
